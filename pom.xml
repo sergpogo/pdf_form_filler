@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>turov</groupId>
-    <artifactId>pdf_from_filler</artifactId>
-    <version>1.0</version>
+    <groupId>turov_spogo</groupId>
+    <artifactId>pdf_form_filler</artifactId>
+    <packaging>jar</packaging>
+    <version>1.1</version>
     <build>
         <plugins>
             <plugin>

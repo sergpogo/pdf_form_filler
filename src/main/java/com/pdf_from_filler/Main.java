@@ -20,22 +20,23 @@ public class Main
     public static void main(String[] args) throws DocumentException, IOException
     {
         if (args.length == 0 || (args.length == 1 && args[0] == "-h")) {
-            System.out.println("Usage: 4 or 5 arguments: source, JSON data, font, dest, font size = 10");
+            System.out.println("Usage: 5 or 6 arguments: source, JSON data, font, dest, flatten, font size = 10");
             System.exit(0);
         }
-        else if (args.length != 4 && args.length != 5) {
+        else if (args.length != 5 && args.length != 6) {
             System.err.println("Wrong number of arguments");
             System.exit(1);
         }
 
-        String font_size = args.length == 4 ? "10" : args[4];
+        String font_size = args.length == 5 ? "10" : args[5];
+        Boolean flatten = Boolean.valueOf(args[4]);
 
-        new Main().manipulatePdf(args[0], args[1], args[2], args[3], font_size);
+        new Main().manipulatePdf(args[0], args[1], args[2], args[3], flatten, font_size);
     }
 
 
 
-    public void manipulatePdf(String src, String data, String font, String dest, String font_size) throws DocumentException, IOException
+    public void manipulatePdf(String src, String data, String font, String dest, Boolean flatten, String font_size) throws DocumentException, IOException
     {
         File file = new File(dest);
 
@@ -48,9 +49,7 @@ public class Main
         HashMap<String, String> o = mapper.readValue(from, typeRef);
 
         PdfReader reader = new PdfReader(src);
-
         PdfStamper stamper = new PdfStamper(reader, new FileOutputStream(dest));
-
         AcroFields fields = stamper.getAcroFields();
 
         fields.setGenerateAppearances(true);
@@ -65,6 +64,9 @@ public class Main
             fields.setField(key, value);
         }
 
+        if (flatten == true)
+        	stamper.setFormFlattening(true);
+        
         stamper.close();
 
     }
