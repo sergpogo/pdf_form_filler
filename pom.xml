@@ -7,7 +7,7 @@
     <groupId>turov_spogo</groupId>
     <artifactId>pdf_form_filler</artifactId>
     <packaging>jar</packaging>
-    <version>1.1</version>
+    <version>1.2</version>
     <build>
         <plugins>
             <plugin>
@@ -39,6 +39,7 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+                <version>3.8.1</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -46,6 +47,7 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
+                <version>3.1.0</version>
             </plugin>
         </plugins>
     </build>
