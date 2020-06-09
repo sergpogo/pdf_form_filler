@@ -1,0 +1,16 @@
+[
+  {
+    "imgPath": "img.jpg",
+    "absolutePositionX": 300,
+    "absolutePositionY": 85,
+    "height": 33,
+    "width": 280
+  },
+  {
+    "imgPath": "img2.jpg",
+    "absolutePositionX": 50,
+    "absolutePositionY": 85,
+    "height": 33,
+    "width": 280
+  }
+]
