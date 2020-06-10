@@ -11,6 +11,7 @@ import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -70,7 +71,6 @@ public class Main
             fields.setField(key, value);
         }
         
-        
         File facsimileFile = new File(facsimileData);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         List<Facsimile> facsimileArray = mapper.readValue(facsimileFile, new TypeReference<List<Facsimile>>(){});
@@ -95,7 +95,8 @@ public class Main
         image.setDirectReference(ref.getIndirectReference());
         image.setAbsolutePosition(facsimile.getAbsolutePositionX(), facsimile.getAbsolutePositionY());
         image.scaleToFit(facsimile.getWidth(), facsimile.getHeight());
-        PdfContentByte over = stamper.getOverContent(1);
+        PdfContentByte over = stamper.getOverContent(facsimile.getPageNumber());
         over.addImage(image);
     }
+
 }

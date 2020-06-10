@@ -7,6 +7,7 @@ public class Facsimile
 	private int absolutePositionY;
 	private int height;
 	private int width;
+	private int pageNumber;
 
 	public String getImgPath() {
 		return imgPath;
@@ -47,5 +48,12 @@ public class Facsimile
 	public void setWidth(int width) {
 		this.width = width;
 	}
+	public int getPageNumber() {
+		return pageNumber;
+	}
+
+	public void setPageNumber(int pageNumber) {
+		this.pageNumber = pageNumber;
+	}	
 }
 

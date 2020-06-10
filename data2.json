@@ -1,16 +1,18 @@
 [
   {
-    "imgPath": "img.jpg",
+    "imgPath": "img.png",
     "absolutePositionX": 300,
     "absolutePositionY": 85,
     "height": 33,
-    "width": 280
+    "width": 280,
+    "pageNumber": 1
   },
   {
     "imgPath": "img2.jpg",
     "absolutePositionX": 50,
     "absolutePositionY": 85,
     "height": 33,
-    "width": 280
+    "width": 280,
+    "pageNumber": 1
   }
 ]
